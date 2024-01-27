@@ -8,15 +8,11 @@
  */
 int _isupper(int c)
 {
-	int n;
+	if (c > 64 && c < 91)
+		goto label1;
+	else
+		goto label2;
 
-	for (n = 65; n <= 90; n++)
-	{
-		if (c == n)
-			goto label1;
-		else
-			goto label2;
-	}
 label1:
 		return (1);
 label2:
