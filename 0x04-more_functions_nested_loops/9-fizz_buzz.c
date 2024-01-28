@@ -19,7 +19,8 @@ int main(void)
 			printf("Buzz");
 		else
 			printf("%d", y);
-		putchar(' ');
+		if (y < 100)
+			putchar(' ');
 	}
 	putchar('\n');
 	return (0);
