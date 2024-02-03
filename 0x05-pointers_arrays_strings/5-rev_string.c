@@ -21,6 +21,7 @@ void rev_string(char *s)
 /**
  * rev_string0 - draft
  * @s: draft
+ * @c: draft
  */
 void rev_string0(char *s, int c)
 {
