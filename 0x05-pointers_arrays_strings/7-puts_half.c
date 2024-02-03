@@ -16,11 +16,10 @@ void puts_half(char *str)
 		c /= 2;
 		str += c;
 	}
-		
 	else
 	{
 		c = (c - 1) / 2;
-		str += c;
+		str += c + 1;
 	}
 	while (c)
 	{
