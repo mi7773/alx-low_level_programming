@@ -11,7 +11,7 @@ char *cap_string(char *a)
 	char *r = a;
 	int i = sizeof(s) / sizeof(int);
 	int ri;
-	
+
 	while (*a != 0)
 	{
 		if (*a > 96 && *a < 123)
@@ -21,7 +21,7 @@ char *cap_string(char *a)
 				*a -= 32;
 				continue;
 			}
-			ri = 0;	
+			ri = 0;
 			while (ri < i)
 			{
 				if (s[ri] == *(a - 1))
