@@ -25,5 +25,6 @@ char *_strncat(char *dest, char *src, int n)
 		dest++;
 		ps++;
 	}
+	*dest = 0;
 	return (pd);
 }
