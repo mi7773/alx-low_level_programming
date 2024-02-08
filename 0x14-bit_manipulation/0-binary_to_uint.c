@@ -9,7 +9,6 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int r = 0;
 	float a = .5;
-	int c = 0;
 	const char *z = b;
 
 	if (b == 0)
@@ -17,7 +16,6 @@ unsigned int binary_to_uint(const char *b)
 	while (*b != '\0')
 	{
 		b++;
-		c++;
 		a *= 2;
 	}
 	b = z;
