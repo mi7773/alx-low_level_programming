@@ -19,8 +19,6 @@ unsigned int binary_to_uint(const char *b)
 		c++;
 		a *= 2;
 	}
-	if (c == 0)
-		return (0);
 	b = b - c;
 	while (*b != '\0')
 	{
