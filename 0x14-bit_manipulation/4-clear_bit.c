@@ -8,14 +8,9 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	int i = 1, o = 0;
-	unsigned long int m = n;
+	int i = 1;
 
-	do {
-		o++;
-		m >>= 1;
-	} while (m);
-	if (index > 32 || index > o)
+	if (index > 32)
 		return (-1);
 	i <<= index;
 	if ((*n >> index) & 1)
