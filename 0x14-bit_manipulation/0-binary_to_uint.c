@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * binary_to_uint - draft
@@ -11,6 +12,8 @@ unsigned int binary_to_uint(const char *b)
 	float a = .5;
 	int c = 0;
 
+	if (b == NULL)
+		return (0);
 	if (b == 0)
 		return (0);
 	while (*b != '\0')
