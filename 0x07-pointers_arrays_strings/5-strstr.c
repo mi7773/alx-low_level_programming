@@ -10,6 +10,8 @@ char *_strstr(char *haystack, char *needle)
 {
 	char *r, *r0;
 
+	if (needle == "")
+		retun (0);
 	while (*haystack != 0)
 	{
 		r = needle;
