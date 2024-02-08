@@ -8,15 +8,9 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	char *r = needle, *r0;
-	int c = 0;
+	char *r, *r0;
 
-	while (*r != '\0')
-	{
-		r++;
-		c++;
-	}
-	if (c <= 0)
+	if (*needle == '\0')
 		return (haystack);
 	while (*haystack != 0)
 	{
