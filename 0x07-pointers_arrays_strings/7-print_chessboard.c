@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * void print_chessboard - draft
+ * print_chessboard - draft
  * @a: draft
  */
 void print_chessboard(char (*a)[8])
