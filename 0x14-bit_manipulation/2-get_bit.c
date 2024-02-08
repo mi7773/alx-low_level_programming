@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_int - draft
+ * get_bit - draft
  * @n: draft
  * @index: draft
  * Return: draft
