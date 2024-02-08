@@ -8,13 +8,14 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int r = 0;
-	int a = 1;
-	int c = 1;
+	float a = .5;
+	int c = 0;
 
 	if (b == 0)
 		return (0);
-	while (*++b != '\0')
+	while (*b != '\0')
 	{
+		b++;
 		c++;
 		a *= 2;
 	}
