@@ -8,10 +8,16 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	char *r, *r0;
+	char *r = needle, *r0;
+	int c = 0;
 
-	if (*needle == '\0')
-		return (0);
+	while (*r != '\0')
+	{
+		r++;
+		c++;
+	}
+	if (c <= 0)
+		return (haystack);
 	while (*haystack != 0)
 	{
 		r = needle;
