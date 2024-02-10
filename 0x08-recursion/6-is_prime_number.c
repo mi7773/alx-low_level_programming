@@ -24,7 +24,7 @@ int is_prime_number0(int n, int m)
 {
 	if (n % m == 0)
 		return (0);
-	else if (n % m != 0 && m <= 2)
+	else if (n % m != 0 && m <= 1)
 		return (1);
 	else
 		return (is_prime_number0(n, --m));
