@@ -22,7 +22,7 @@ unsigned int binary_to_uint(const char *b)
 	while (*b != '\0')
 	{
 		if (*b == '0' || *b == '1')
-			r += (unsigned int) (*b - 48) * (a / 2);
+			r += (*b - 48) * (a / 2);
 		else
 			return (0);
 		b++;
