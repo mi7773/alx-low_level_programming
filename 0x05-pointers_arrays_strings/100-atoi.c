@@ -7,7 +7,7 @@
  */
 int _atoi(char *s)
 {
-	char *a = 0, *b = 0;
+	char *a = 0;
 	int c = 0, d, e, r0 = 0, r = 0;
 	unsigned int r1 = 0;
 
@@ -17,18 +17,17 @@ int _atoi(char *s)
 			c++;
 		if (*s >= 48 && *s <= 57)
 		{
-			a = s;
-			b = a;
-			while (*++s >= 48 && *s <= 57)
-				b = s;
-			d = b - a;
+			a = s++;
+			while (*s >= 48 && *s <= 57)
+				s++;
+			d = s - a;
 			e = d;
-			while (a <= b)
+			while (a < s)
 			{
 				r0 = 0;
 				d = e;
 				r0 += (*a - 48);
-				while (d > 0)
+				while (d > 1)
 				{
 					r0 *= 10;
 					d--;
@@ -47,5 +46,5 @@ int _atoi(char *s)
 	}
 	if (a == 0)
 		return (0);
-	return (2147483647);
+	return (54164);
 }
