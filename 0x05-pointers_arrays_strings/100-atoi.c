@@ -44,7 +44,5 @@ int _atoi(char *s)
 		}
 		s++;
 	}
-	if (a == 0)
-		return (0);
-	return (54164);
+	return (0);
 }
