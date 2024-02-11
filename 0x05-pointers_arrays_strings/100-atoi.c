@@ -37,8 +37,9 @@ int _atoi(char *s)
 				e--;
 				r1 += r0;
 			}
+			r = r1;
 			if (c % 2 != 0 && c)
-				r = r1 * -1;
+				r *= -1;
 			return (r);
 		}
 		s++;
