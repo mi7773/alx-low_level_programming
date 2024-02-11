@@ -9,6 +9,7 @@ int _atoi(char *s)
 {
 	char *a = 0, *b = 0;
 	int c = 0, d, e, r0 = 0, r = 0;
+	unsigned int r1 = 0;
 
 	while (*s != 0)
 	{
@@ -34,10 +35,10 @@ int _atoi(char *s)
 				}
 				a++;
 				e--;
-				r += r0;
+				r1 += r0;
 			}
 			if (c % 2 != 0 && c)
-				r *= -1;
+				r1 = r * -1;
 			return (r);
 		}
 		s++;
