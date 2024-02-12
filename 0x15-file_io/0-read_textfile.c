@@ -29,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		case 0:
 			while (*p++ != 0)
 				i++;
-			wrr = write(STDOUT_FILENO, c, i);	
+			wrr = write(STDOUT_FILENO, c, i);
 			break;
 		default:
 			wrr = write(STDOUT_FILENO, c, rdr);
@@ -44,7 +44,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		default:
 			return (wrr);
 	}
-	free(c);
 	close(fd);
-	return (wrr);
+	free(c);
 }
