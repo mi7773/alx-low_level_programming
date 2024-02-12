@@ -17,9 +17,12 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	while (*text_content++ != 0)
 		i++;
-	fd = open(filename, O_TRUNC | O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR);
-	if (i > 0)
-		wrr = write(fd, text_content - i - 1, i);
+	fd = open(filename, O_EXCL);
+	if (fd == -1)
+		fd = open(filename, O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR);
+	else
+		fd = open(filename, O_TRUNC);
+	wrr = write(fd, text_content - i - 1, i);
 	if (wrr == -1)
 		return (-1);
 
