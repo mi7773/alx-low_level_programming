@@ -18,13 +18,9 @@ int create_file(const char *filename, char *text_content)
 	while (*text_content++ != 0)
 		i++;
 	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, S_IRUSR | S_IWUSR);
-	if (i > 0)
-	{	
-		wrr = write(fd, text_content - i - 1, i);
-		if (wrr == -1)
-			return (-1);
-	}
-
+	wrr = write(fd, text_content - i - 1, i);
+	if (wrr == -1)
+		return (-1);
 	close(fd);
 	return (1);
 }
