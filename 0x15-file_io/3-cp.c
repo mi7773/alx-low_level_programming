@@ -27,15 +27,15 @@ int main(int ac, char **av)
 		rr = read(fdf, c, 1024);
 		wr = write(fdt, c, rr);
 	} while (rr == 1024);
-	if (fdt == -1 || wr == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		exit(99);
-	}
 	if (fdf == -1 || rr == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
+	}
+	if (fdt == -1 || wr == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99);
 	}
 	cf = close(fdf);
 	ct = close(fdt);
