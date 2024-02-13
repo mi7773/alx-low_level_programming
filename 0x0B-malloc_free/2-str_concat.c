@@ -29,7 +29,6 @@ char *str_concat(char *s1, char *s2)
 	r = p;
 	while (*s1 != 0)
 		*r++ = *s1++;
-	--r;
 	while (*s2 != 0)
 		*r++ = *s2++;
 	*r = 0;
