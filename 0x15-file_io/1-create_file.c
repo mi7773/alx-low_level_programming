@@ -11,7 +11,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd, wrr, i = 0, cr;
+	int fd, r, i = 0;
 
 	if (filename == 0)
 		return (-1);
@@ -20,11 +20,11 @@ int create_file(const char *filename, char *text_content)
 	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, S_IRUSR | S_IWUSR);
 	if (fd == -1)
 		return (-1);
-	wrr = write(fd, text_content - i - 1, i);
-	if (wrr == -1)
+	r = write(fd, text_content - i - 1, i);
+	if (wr == -1)
 		return (-1);
-	cr = close(fd);
-	if (cr == -1)
+	r = close(fd);
+	if (r == -1)
 		return (-1);
 	return (1);
 }
