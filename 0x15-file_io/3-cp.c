@@ -27,7 +27,7 @@ int main(int ac, char **av)
 		rr = read(fdf, c, 1024);
 		wr = write(fdt, c, rr);
 	} while (rr == 1024);
-	if (fdt == -1 || wr = -1)
+	if (fdt == -1 || wr == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
