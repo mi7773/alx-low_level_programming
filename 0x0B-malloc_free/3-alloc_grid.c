@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -34,6 +35,9 @@ int **alloc_grid(int width, int height)
 		r++;
 		i++;
 	}
+	r -= i;
+	if (r == p)
+		printf("555"\n);
 	i = width;
 	while (height--)
 	{
