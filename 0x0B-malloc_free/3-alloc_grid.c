@@ -28,7 +28,7 @@ int **alloc_grid(int width, int height)
 			return (0);
 		}
 	}
-	p -= i - 1;
+	p -= i;
 	i = width;
 	while (height--)
 	{
