@@ -5,7 +5,7 @@
  * alloc_grid - draft
  * @width: draft
  * @height: draft
- * Retrun: draft
+ * Return: draft
  */
 int **alloc_grid(int width, int height)
 {
@@ -25,8 +25,7 @@ int **alloc_grid(int width, int height)
 	{
 		width = i;
 		while (width--)
-			 *(*(pp + height) + width) = 0;
-			
+			*(*(pp + height) + width) = 0;
 	}
 	return (pp);
 }
