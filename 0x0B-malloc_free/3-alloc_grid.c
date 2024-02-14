@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -18,22 +17,16 @@ int **alloc_grid(int width, int height)
 	p = (int **) malloc(sizeof(int *) * height);
 	if (p == 0)
 		return (0);
-	while (i < height)
+	while (i++ < height)
 	{
-		*p = (int *) malloc(sizeof(int) * width);
-		if (*p == 0)
+		*p++ = (int *) malloc(sizeof(int) * width);
+		if (*p - 1 == 0)
 		{
-			while (i > 0)
-			{
-				i--;
-				p--;
-				free(*p);
-			}
-			free(p);
+			while (i-- > 1)
+				free(*--p - 1);
+			free(p - 1);
 			return (0);
 		}
-		p++;
-		i++;
 	}
 	p -= i;
 	i = width;
