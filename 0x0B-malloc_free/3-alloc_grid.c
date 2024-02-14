@@ -11,39 +11,37 @@
 int **alloc_grid(int width, int height)
 {
 	int i = 0;
-	int **pp, **r;
+	int **p;
 
 	if (width <= 0 || height <= 0)
 		return (0);
-	pp = (int **) malloc(sizeof(int *) * height);
-	if (pp == 0)
+	p = (int **) malloc(sizeof(int *) * height);
+	if (p == 0)
 		return (0);
-	r = pp;
 	while (i < height)
 	{
-		*r = (int *) malloc(sizeof(int) * width);
-		if (*r == 0)
+		*p = (int *) malloc(sizeof(int) * width);
+		if (*p == 0)
 		{
 			while (i > 0)
 			{
-				r--;
-				free(*r);
+				i--;
+				p--;
+				free(*p);
 			}
-			free(pp);
+			free(p);
 			return (0);
 		}
-		r++;
+		p++;
 		i++;
 	}
-	r -= i;
-	if (r == p)
-		printf("555"\n);
+	p -= i;
 	i = width;
 	while (height--)
 	{
 		width = i;
 		while (width--)
-			*(*(pp + height) + width) = 0;
+			*(*(p + height) + width) = 0;
 	}
-	return (pp);
+	return (p);
 }
