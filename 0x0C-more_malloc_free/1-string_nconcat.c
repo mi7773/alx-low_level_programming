@@ -59,7 +59,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		n = j;
 	}
-	r = malloc((n + i + 1) * sizeof(*r));
+	r = malloc((i + n + 1) * sizeof(*r));
 	if (r == 0)
 	{
 		return (0);
@@ -69,7 +69,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		myswap(&r[i], s2, n);
 	}
-	r[i + j] = 0;
+	r[i + n] = 0;
 
 	return (r);
 }
