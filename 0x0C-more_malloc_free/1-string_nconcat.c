@@ -31,7 +31,7 @@ void myswap(char *de, char *so, unsigned int n)
 	unsigned int i;
 
 	i = 0;
-	while (so[i])
+	while (so && so[i])
 	{
 		de[i] = so[i];
 		i++;
