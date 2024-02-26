@@ -57,7 +57,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	j = findl(s2);
 	if (n > j)
 	{
-		n = i;
+		n = j;
 	}
 	r = malloc((n + i + 1) * sizeof(*r));
 	if (r == 0)
