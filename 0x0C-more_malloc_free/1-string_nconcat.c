@@ -53,6 +53,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i, j;
 	char *r;
 
+	if (s1 == 0)
+	{
+		s1 = "";
+	}
+	if (s2 == 0)
+	{
+		s2 = "";
+	}
 	i = findl(s1);
 	j = findl(s2);
 	if (n > j)
@@ -65,10 +73,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (0);
 	}
 	myswap(&r[0], s1, 0);
-	if (s1)
-	{
-		myswap(&r[i], s2, n);
-	}
+	myswap(&r[i], s2, n);
 	r[i + n] = 0;
 
 	return (r);
