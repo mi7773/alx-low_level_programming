@@ -57,10 +57,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s1 = "";
 	}
-	if (s2 == 0)
-	{
-		s2 = "";
-	}
 	i = findl(s1);
 	j = findl(s2);
 	if (n > j)
