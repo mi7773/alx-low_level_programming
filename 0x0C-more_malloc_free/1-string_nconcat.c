@@ -11,7 +11,7 @@ unsigned int findl(char *str)
 	unsigned int i;
 
 	i = 0;
-	while (str && str[i])
+	while (str[i])
 	{
 		i++;
 	}
@@ -31,7 +31,7 @@ void myswap(char *de, char *so, unsigned int n)
 	unsigned int i;
 
 	i = 0;
-	while (so && so[i])
+	while (so[i])
 	{
 		de[i] = so[i];
 		i++;
@@ -65,10 +65,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (0);
 	}
 	myswap(&r[0], s1, 0);
-	if (s1)
-	{
-		myswap(&r[i], s2, n);
-	}
+	myswap(&r[i], s2, n);
 	r[i + n] = 0;
 
 	return (r);
