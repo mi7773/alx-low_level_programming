@@ -53,13 +53,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i, j;
 	char *r;
 
+	if (s1 == 0)
+	{
+		s1 = "";
+	}
+	if (s2 == 0)
+	{
+		s2 = "";
+	}
 	i = findl(s1);
 	j = findl(s2);
 	if (n > j)
 	{
 		n = i;
 	}
-	r = malloc((n + i + 1) * sizeof *r);
+	r = malloc((n + i + 1) * sizeof(*r));
 	if (r == 0)
 	{
 		return (0);
