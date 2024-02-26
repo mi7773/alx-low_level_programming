@@ -33,12 +33,12 @@ void myswap(char *de, char *so, unsigned int n)
 	i = 0;
 	while (so && so[i])
 	{
-		if (i == n)
+		de[i] = so[i];
+		i++;
+		if (n != 0 && i == n)
 		{
 			break;
 		}
-		de[i] = so[i];
-		i++;
 	}
 }
 
@@ -65,8 +65,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		return (0);
 	}
-	myswap(&r[0], s1, i);
-	myswap(&r[i], s2, n);
+	if (s1)
+	{
+		myswap(&r[0], s1, 0);
+	}
+	if (s1 && s2)
+	{
+		myswap(&r[i], s2, n);
+	}
 	r[i + n] = 0;
 
 	return (r);
