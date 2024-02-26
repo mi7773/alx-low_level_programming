@@ -65,7 +65,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (0);
 	}
 	myswap(&r[0], s1, 0);
-	myswap(&r[i], s2, n);
+	if (s1)
+	{
+		myswap(&r[i], s2, n);
+	}
 	r[i + j] = 0;
 
 	return (r);
