@@ -9,44 +9,24 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	char *r;
 	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (0);
 	}
-	if (size == sizeof(char))
+	r = malloc(nmemb * size);
+	if (r == 0)
 	{
-		char *r = malloc(nmemb * size);
-		if (r == 0)
-		{
-			return (0);
-		}
-		i = 0;
-		while (i < nmemb)
-		{
-			r[i] = 0;
-			i++;
-		}
-
-		return (r);
+		return (0);
 	}
-	if (size == sizeof(int))
+	i = 0;
+	while (i < (nmemb * size))
 	{
-		int *r = malloc(nmemb * size);
-		if (r == 0)
-		{
-			return (0);
-		}
-		i = 0;
-		while (i < nmemb)
-		{
-			r[i] = 0;
-			i++;
-		}
-
-		return (r);
+		r[i] = 0;
+		i++;
 	}
 
-	return (0);
+	return ((void*) r);
 }
