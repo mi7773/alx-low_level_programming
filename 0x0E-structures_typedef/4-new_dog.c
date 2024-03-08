@@ -35,9 +35,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (name && owner)
 	{
 		r->name = (char *) malloc(sizeof(name));
+		if (r->name == 0)
+		{
+			free(r);
+			return (0);
+		}
 		copy(name, r->name);
 		r->age = age;
 		r->owner = (char *) malloc(sizeof(owner));
+		if (r->owner == 0)
+		{
+			free(r->name);
+			free(r);
+			return (0);
+		}
 		copy(owner, r->owner);
 	}
 	else
