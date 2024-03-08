@@ -17,6 +17,23 @@ void copy(char *s, char *d)
 	}
 	d[i] = '\0';
 }
+
+/**
+ * findl - draft
+ * @s: draft
+ * Return: draft
+ */
+int findl(char *s)
+{
+	int i = 0;
+	
+	while (s[i])
+	{
+		i++;
+	}
+	return (i + 1);
+}
+
 /**
  * new_dog - draft
  * @name: draft
@@ -35,7 +52,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	if (name && owner)
 	{
-		r->name = (char *) malloc(sizeof(name));
+		r->name = (char *) malloc(findl(name));
 		if (r->name == 0)
 		{
 			free(r);
@@ -43,7 +60,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		}
 		copy(name, r->name);
 		r->age = age;
-		r->owner = (char *) malloc(sizeof(owner));
+		r->owner = (char *) malloc(findl(owner));
 		if (r->owner == 0)
 		{
 			free(r->name);
@@ -57,7 +74,5 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(r);
 		return (0);
 	}
-	free(r->name);
-	free(r->owner);
 	return (r);
 }
