@@ -15,6 +15,7 @@ void copy(char *s, char *d)
 		d[i] = s[i];
 		i++;
 	}
+	d[i] = '\0';
 }
 /**
  * new_dog - draft
