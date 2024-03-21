@@ -4,7 +4,7 @@
 /**
  * dlistint_len - draft
  * @h: draft
- * 
+ *
  * Return: draft
  */
 size_t dlistint_len(const dlistint_t *h)
