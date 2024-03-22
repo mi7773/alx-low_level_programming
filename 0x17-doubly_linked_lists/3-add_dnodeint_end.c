@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - draft
+ * add_dnodeint_end - draft
  * @head: draft
  * @n: draft
  *
@@ -32,7 +32,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	}
 	else
 	{
-		t->prev = NULL; 
+		t->prev = NULL;
 		*head = t;
 	}
 	return (t);
